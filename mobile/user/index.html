@@ -25,8 +25,8 @@
                 <a class="mui-navigate-right" href="#account">
                     <img class="mui-media-object mui-pull-left head-img" id="head-img" src="../images/user.jpg">
                     <div class="mui-media-body">
-                        Hello MUI
-                        <p class="mui-ellipsis">账号:hellomui</p>
+                        <span class="ds-name"></span>
+                        <p class="mui-ellipsis"></p>
                     </div>
                 </a>
             </li>
@@ -61,6 +61,8 @@
         type:'get',
         success:function(data){
             console.log(data);
+            $('.ds-name').text(data.username);
+            $('p.mui-ellipsis').text('电话：'+data.mobile);
             
             if(data.error){
                 location.href="./login.html";
